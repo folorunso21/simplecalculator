@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SimpleCalculator</title>
+
+	<style type="text/css">
+	body{
+		
+		background-color: orange;
+		font-family: sans-serif;
+	}
+		
+		table{
+			margin: auto;
+			background-color: rgba(31, 30, 30, 0.822);
+			border-radius: 25px;
+			box-shadow:10px 20px 10px rgba(22, 22, 22, 0.637) ;
+			
+			
+		}
+
+		#scr{
+			height: 70px;
+			
+
+		}
+
+		#dislpayComputation{
+			border:2px dotted red;
+			border-radius: 6px;
+			height: 50px;
+			font-size: 30px;
+			text-align: right;
+			color: white;
+		}
+
+		td{
+			text-align: center;
+		}
+
+		button{
+			background-color: rgba(0, 0, 0, 0.233);
+			width:50px;
+			height: 50px;
+			color: rgb(104, 2, 2);	
+			border-radius: 10px;
+			cursor:pointer;
+			font-size: large;
+			box-shadow:1px 9px 6px rgb(39, 39, 39) ;
+		}
+
+		button:hover{
+			background-color: rgb(58, 1, 1);
+			color: rgb(197, 186, 140);
+		}
+
+		#ac,#clear,#percentage,#addition,#division,#multiplication,#subtraction,#equal{
+			color: chocolate;
+		}
+
+		#equal{
+			width: 120px;
+		}
+
+
+
+
+		
+	</style>
+</head>
+<body>
+	<section>
+		<div id="cointainer">
+			<table width="50%" height="500px" >
+				<tr>
+					<td colspan="4" id="scr"></td>
+				</tr>
+				<tr>
+					<td id="dislpayComputation" colspan="4"></td>
+
+				</tr>
+
+				<tr>
+					<td><button id="ac">AC</button></td>
+					<td><button id="clear" onclick="clrscr();">CLR</button></td>
+					<td><button id="percentage" onclick = "show('%');">%</button></td>
+					<td><button id="division" onclick = "show('/');">/</button></td>
+				</tr>
+
+				<tr>
+					<td><button onclick = "show(7);">7</button></td>
+					<td><button onclick = "show(8);">8</button></td>
+					<td><button onclick = "show(9);">9</button></td>
+					<td><button id="multiplication" onclick = "show('*');">*</button></td>
+				</tr>
+
+				<tr>
+					<td><button onclick = "show(4);">4</button></td>
+					<td><button onclick = "show(8);">8</button></td>
+					<td><button onclick = "show(6);">6</button></td>
+					<td><button id="subtraction" onclick = "show('-');">-</button></td>
+				</tr>
+
+				<tr>
+					<td><button onclick = "show(1);">1</button></td>
+					<td><button onclick = "show(2);">2</button></td>
+					<td><button onclick = "show(3);">3</button></td>
+					<td><button id="addition" onclick = "show('+');">+</button></td>
+				</tr>
+
+				<tr>
+					<td><button onclick = "show(0);">0</button></td>
+					<td><button onclick = "show('.');">.</button></td>
+					<td colspan="2"><button id="equal" onclick="calculate();">=</button></td>
+					
+				</tr>
+			</table>
+			
+		</div>
+
+
+
+	</section>
+
+	<script>
+	
+		 screen = document.getElementById('dislpayComputation');
+		function show(x){
+			screen.innerHTML += x;
+			
+			
+		};
+
+		function clrscr(){
+			screen.innerHTML = "";
+		};
+
+		function calculate(){
+
+			screen.innerHTML = eval(screen.innerHTML);
+		}
+
+		
+	</script>
+
+</body>
+</html>
